@@ -29,8 +29,8 @@ public class DriverServiceImpl implements DriverService {
 		driver.setPassword(password);
 		driver.setCab(cab);
 
-//		driverRepository3.save(driver);
-		cabRepository3.save(cab);
+		driverRepository3.save(driver);
+//		cabRepository3.save(cab);
 	}
 
 	@Override
@@ -38,9 +38,8 @@ public class DriverServiceImpl implements DriverService {
 		// Delete driver without using deleteById function
 		Driver driver = driverRepository3.findById(driverId).get();
 		Cab cab = driver.getCab();
-		cabRepository3.delete(cab);
-//		driverRepository3.delete(driver);
-
+//		cabRepository3.delete(cab);
+		driverRepository3.delete(driver);
 	}
 
 	@Override
